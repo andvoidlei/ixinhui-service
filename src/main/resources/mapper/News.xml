@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.andvoid.ixinhui.mapper.news.NewsMapper">
+    <!-- 小星球日常报表：用户部分 -->
+    <select id="queryNewsList" resultType="com.andvoid.ixinhui.dto.NewsList">
+        select news_id as newsId,
+        title as title
+        from t_news_detail
+        where 1=1  <![CDATA[ and news_type=#{categoryId}  ]]>
+    </select>
+
+</mapper>

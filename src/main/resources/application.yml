@@ -1,3 +1,24 @@
 server:
   #端口号
   port: 8087
+
+# 数据源
+spring:
+  application:
+    name: shardingjdbc-shardingtable-demo
+  datasource:
+    url: jdbc:mysql://42.192.164.47:3306/ixinhui?serverTimezone=UTC
+    username: ixinhui
+    password: admin123
+    driver-class-name: com.mysql.jdbc.Driver
+    dbcp2:
+      min-idle: 5                                # 数据库连接池的最小维持连接数
+      initial-size: 5                            # 初始化连接数
+      max-total: 5                               # 最大连接数
+      max-wait-millis: 150                       # 等待连接获取的最大超时时间
+
+
+mybatis:
+  mapper-locations:
+    - classpath*:mapper/*.xml
+    - classpath*:com/**/mapper/*.xml
